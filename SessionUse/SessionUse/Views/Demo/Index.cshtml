@@ -1,0 +1,43 @@
+﻿@{ 
+    Layout = null;
+}
+@using Microsoft.AspNetCore.Http;
+@using SessionUse.Helpers;
+@using SessionUse.Models;
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <h3>Session Page</h3>
+        Age:@Context.Session.GetString("username")
+    <h3>Product Info</h3>
+        @{ 
+            Product product = SessionHelper.GetObjectFromJson<Product>(Context.Session, "product");
+
+        }
+        Id: @product.Id
+    <br />
+        Price: @product.Price
+    <h3>Product list</h3>
+        @{ 
+            List<Product> products = SessionHelper.GetObjectFromJson<List<Product>>(Context.Session, "products");
+        }
+        @foreach (var p in products)
+        {
+            <div>
+                Id: @p.Id
+                <br />
+                Name:@p.Name
+            <br />
+                Price: @p.Price
+            <br />
+                =============================
+            <br />
+
+
+            </div>
+        }
+    </body>
+    </html>

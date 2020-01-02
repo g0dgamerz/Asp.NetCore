@@ -1,0 +1,12 @@
+C:\Users\Jidesh\source\repos\CartSession\CartSession\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Jidesh\source\repos\CartSession\CartSession\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Jidesh\source\repos\CartSession\CartSession\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Jidesh\source\repos\CartSession\CartSession\bin\Debug\netcoreapp3.1\CartSession.exe
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\CartSession.csprojAssemblyReference.cache
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\staticwebassets\CartSession.StaticWebAssets.Manifest.cache
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\staticwebassets\CartSession.StaticWebAssets.xml
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\CartSession.AssemblyInfoInputs.cache
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\CartSession.AssemblyInfo.cs
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\CartSession.RazorTargetAssemblyInfo.cache
+C:\Users\Jidesh\source\repos\CartSession\CartSession\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Jidesh\source\repos\CartSession\CartSession\obj\Debug\netcoreapp3.1\CartSession.csproj.CopyComplete
