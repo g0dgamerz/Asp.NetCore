@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using CartSession.Helpers;
 using NSubstitute.ReceivedExtensions;
+using MailChimp.Net.Models;
 
 namespace CartSession.Controllers
 {
@@ -25,13 +26,51 @@ namespace CartSession.Controllers
         [Route("buy/{id}")]
         public IActionResult Buy(string id)
         {
-            Product product = new Product();
-            if (SessionHelpers.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart")== null) 
+            ProductModel productModel = new ProductModel();
+            if (SessionHelpers.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart") == null)
             {
                 List<Item> cart = new List<Item>();
-                cart.Add(new Item { Product = Product.find(id, Quantity = 1) });
-
+                cart.Add(new Item { Product = productModel.find(id), Quantity = 1 });
+                SessionHelpers.SetObjectAsJson(HttpContext.Session, "cart", cart);
             }
+            else
+            {
+                List<Item> cart = SessionHelpers.GetObjectFromJson<List<Item>>(HttpContext.Session,"cart");
+                int index = isExist(id);
+                if (index != -1)
+                {
+                    cart[index].Quantity++;
+                }
+                else
+                {
+                    cart.Add(new Item { Product = productModel.find(id), Quantity = 1 });
+                }
+                SessionHelpers.SetObjectAsJson(HttpContext.Session, "cart", cart);
+            }
+            return RedirectToAction("Index");
+
+        }
+        [Route("remove/{id")]
+        public IActionResult Remove(string id)
+        {
+            List<Item> cart = SessionHelpers.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+            int index = isExist(id);
+            cart.RemoveAt(index);
+            SessionHelpers.SetObjectAsJson(HttpContext.Session, "cart", cart);
+            return RedirectToAction("Index");
+        }
+
+        private int isExist(string id)
+        {
+            List<Item> cart = SessionHelpers.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
+            for(int i =0;i<cart.Count; i++)
+            {
+                if(cart[i].Product.Id.Equals(id))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
-}
+    }

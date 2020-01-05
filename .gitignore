@@ -1,2 +1,4 @@
 FormHandling/.vs/FormHandling/v16/Server/sqlite3/db.lock
 Layout/.vs/Layout/v16/Server/sqlite3/
+Middleware/Mioddleware/bin/Debug/netcoreapp3.1/appsettings.Development.json
+UseArea/UseArea/appsettings.Development.json

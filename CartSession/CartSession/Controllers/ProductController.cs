@@ -12,11 +12,11 @@ namespace CartSession.Controllers
     {
         [Route("")]
         [Route("index")]
-        [Route("~/")]
+        [Route("~/")]         
         public IActionResult Index()
         {
-            Product products = new Product();
-            ViewBag.products = products;
+            ProductModel productModel = new ProductModel();
+            ViewBag.products = productModel.findAll();
             return View();
 
         }
